@@ -11,7 +11,7 @@ module.exports = function (app) {
     });
 
     // Catch all route
-    app.get('*', function(req, res) {
-    res.redirect("/");
-    });
+    // app.get('*', function(req, res) {
+    // res.redirect("/");
+    // });
 }

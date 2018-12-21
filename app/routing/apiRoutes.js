@@ -9,9 +9,9 @@ module.exports = function(app) {
     });
 
     // Catch all route
-    app.get('*', function(req, res) {
-    res.redirect("/");
-    });
+    // app.get('*', function(req, res) {
+    // res.redirect("/");
+    // });
   
     // API POST Requests
     app.post("/api/friends", function(req, res) {
