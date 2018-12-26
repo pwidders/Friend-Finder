@@ -1,6 +1,7 @@
 // DEPENDENCIES
 var express = require("express");
 var path = require('path');
+var bodyParser = require("body-parser");
 
 
 // EXPRESS CONFIGURATION
@@ -20,16 +21,9 @@ app.use(express.static(path.join(__dirname, '/../public')))
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 
 // External API routes
-
-// var externalAPIRoutes = require("../Friend-Finder/app/routing/apiRoutes");
-// app.use('/apiRoutes', externalAPIRoutes);
+require("./app/routing/apiRoutes")(app);
 
 // External HTML routes
-
-// var externalHTMLRoutes = require("../Friend-Finder/app/routing/htmlRoutes");
-// app.use('/htmlRoutes', externalHTMLRoutes);
-
-require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
 // LISTENER
