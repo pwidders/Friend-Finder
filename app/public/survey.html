@@ -14,6 +14,9 @@
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Varela+Round" rel="stylesheet">
 
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <title>Friend Finder</title>
 </head>
 
@@ -49,129 +52,298 @@ h5 {
       <div class="card-body">
         <center><h5 class="card-title"><b>Tell us a little about yourself to help us find a match.</b></h5></center>
         <hr>
-        <form role="form">
+        <form name="survey" method="POST">
           <div class="form-group">
             <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" required>
           </div>
           <div class="form-group">
             <label for="photo">Photo URL:</label>
-            <input type="text" class="form-control" id="photo">
+            <input type="text" class="form-control" id="photo" required>
           </div>
-          <input class="btn btn-primary" type="submit" value="Submit">
 
           <hr>
+          <h5>Please select an option from the dropdown menus below for each question. (1 = strongly disagree, 5 = strongly agree).</h5>
+
           <div class="dropdown-menus"></div>
             <h5>Question 1</h5>
             <p>You've been known to talk a lot?</p>
-            <select class="dropdown-options" id="q1">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q1">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 2</h5>
             <p>You enjoy comedies more than drama films</p>
-            <select class="dropdown-options" id="q2">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q2">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 3</h5>
             <p>You enjoy camping and being outdoors</p>
-            <select class="dropdown-options" id="q3">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q3">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 4</h5>
             <p>You would rather go to a music concert than the theatre.</p>
-            <select class="dropdown-options" id="q4">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q4">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 5</h5>
             <p>You typically find your career more important than your personal life.</p>
-            <select class="dropdown-options" id="q5">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q5">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>  
             <h5>Question 6</h5>
             <p>You prefer dogs over cats.</p>
-            <select class="dropdown-options" id="q6">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q6">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 7</h5>
             <p>You like being in the spotlight.</p>
-            <select class="dropdown-options" id="q7">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q7">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 8</h5>
             <p>You enjoy sports.</p>
-            <select class="dropdown-options" id="q8">
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q8">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 9</h5>
             <p>Coke over Pepsi</p>
-            <select class="dropdown-options" id="q9"></select>
-              <option value="1">1 (Strongly Disagree)</option>
+            <select id= "q9">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (Strongly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
             <h5>Question 10</h5>
             <p>You like to take risks.<p>
-            <select class="dropdown-options" id="q10">
-              <option value="1">1 (bly Disagree)</option>
+            <select id= "q10">
+              <option value="-1">Select an option</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5 (bly Agree)</option>
+              <option value="5">5</option>
             </select>
             <br>
-            <center><button type="submit" class="btn btn-primary btn-lg" id="submit-button"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            <center><button type="button" class="btn btn-primary btn-lg" id="submit-button"><i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button></center>
           </div>
+        </form>
     </div>        
   </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+  <!-- Modal -->
+  
+<script>
+
+  (function () {
+    // Prevent HTML5 validation
+    document.forms.survey.noValidate = true;
+    // Grab submit button
+    var button = document.getElementById('submit-button');
+    button.addEventListener('click', function(e) {
+      console.log("I hear you");
+      // Stop page from refreshing on submit 
+      e.preventDefault();
+      // Receive values for name and photo URL
+      var fullName = document.forms.survey.name.value;
+      var photoLink = document.forms.survey.photo.value;
+      // Empty array to store answers
+      //var answerArray =[]
+      
+      // validate answers and push into answerArray
+      var q1Response = document.forms.survey.q1.value;
+        if (q1Response < 0) {
+          alert("Please select an answer for question 1")
+        }
+        else {
+          //answerArray.push(q1Response);
+        }
+
+      var q2Response = document.forms.survey.q2.value;
+        if (q2Response < 0) {
+          alert("Please select an answer for question 2")
+        }
+        else {
+          //answerArray.push(q2Response);
+        }
+
+      var q3Response = document.forms.survey.q3.value;
+        if (q3Response < 0) {
+          alert("Please select an answer for question 3")
+        }
+        else {
+          //answerArray.push(q3Response);
+        }
+
+      var q4Response = document.forms.survey.q4.value;
+        if (q4Response < 0) {
+          alert("Please select an answer for question 4")
+        }
+        else {
+          //answerArray.push(q4Response);
+        }
+
+      var q5Response = document.forms.survey.q5.value;
+        if (q5Response < 0) {
+          alert("Please select an answer for question 5")
+        }
+        else {
+          //answerArray.push(q5Response);
+        }
+
+      var q6Response = document.forms.survey.q6.value;
+        if (q6Response < 0) {
+          alert("Please select an answer for question 6")
+        }
+        else {
+          //answerArray.push(q6Response);
+        }
+
+      var q7Response = document.forms.survey.q7.value;
+        if (q7Response < 0) {
+          alert("Please select an answer for question 7")
+        }
+        else {
+          //answerArray.push(q7Response);
+        }
+
+      var q8Response = document.forms.survey.q8.value;
+        if (q8Response < 0) {
+          alert("Please select an answer for question 8")
+        }
+        else {
+          //answerArray.push(q8Response);
+        }
+
+      var q9Response = document.forms.survey.q9.value;
+        if (q9Response < 0) {
+          alert("Please select an answer for question 9")
+        }
+        else {
+          //answerArray.push(q9Response);
+        }
+      
+      var q10Response = document.forms.survey.q10.value;
+        if (q10Response < 0) {
+          alert("Please select an answer for question 10")
+        }
+        else {
+          //answerArray.push(q10Response);
+        }
+
+      //console.log(answerArray);
+      
+      // Create a new person object to store their data
+      var person = new Object();
+      person.name = fullName;
+      person.photo = photoLink;
+      person.scores = [
+        q1Response,
+        q2Response,
+        q3Response,
+        q4Response,
+        q5Response,
+        q6Response,
+        q7Response,
+        q8Response,
+        q9Response,
+        q10Response
+      ]
+      console.log(person);
+    });
+  }());
+
+    // var selectobject = document.getElementsByClassName("dropdown-options")[0]
+    //   for (var i=0; i<selectobject.length; i++){
+    //         var selectValue = selectobject[i].value;
+    //         console.log(selectobject.options[i].text+" "+selectobject.options[i].value)
+    //         console.log(selectValue);
+    //       }
+
+
+          // if (isValid === true) {
+          //   // Create a new person object to store their data
+          //   var person = new Object();
+          //   person.name = elements.name.value;
+          //   person.photo = elements.photo.value;
+          //   // person.scores = [
+          //   //   elements.question-1.value,
+          //   //   elements.question-2.value,
+
+          //   // ]
+          // console.log(person);
+          // }
+
+    //     // AJAX post the data to the friends API.
+    //     $.post("/api/friends", userData, function(data) {
+    //       // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+    //       $("#match-name").text(data.name);
+    //       $("#match-img").attr("src", data.photo);
+    //       // Show the modal with the best match
+    //       $("#results-modal").modal("toggle");
+    //     });
+    //   } else {
+    //     alert("Please fill out all fields before submitting!");
+    //   }
+    // });
+
+</script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
 </html>
