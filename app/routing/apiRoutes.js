@@ -10,8 +10,33 @@ module.exports = function(app) {
     app.post("/api/friends", function (req, res) {
         // Best friend match logic
         // Variable to hold the new friend object. - Body parser allows us to use req.body
-        var newFriend = req.body;
-        console.log(newFriend);
+        // var newFriend = req.body;
+        // console.log(newFriend);
+        
+        var newFriends = friendData.slice()
+        // Create a new person object to store their data
+        var person = new Object();
+        person.name = req.body.name;
+        person.photo = req.body.photo;
+        person.scores = [
+            Number(req.body.q1),
+            Number(req.body.q2),
+            Number(req.body.q3),
+            Number(req.body.q4),
+            Number(req.body.q5),
+            Number(req.body.q6),
+            Number(req.body.q7),
+            Number(req.body.q8),
+            Number(req.body.q9),
+            Number(req.body.q10),
+        ]
+        // testing- console.log(person);
+        // Push new person into friends(newFriends) array
+        newFriends.push(person);
+        console.log('newFriends', newFriends);
+
+
+
         // // Variable for friend match
         // var bestFriend;
         // // Instantiate a variable with the maximum possible difference allowed by 10 survey questions + 1 (50 + 1)
