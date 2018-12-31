@@ -14,9 +14,6 @@
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Varela+Round" rel="stylesheet">
 
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <title>Friend Finder</title>
 </head>
 
@@ -52,14 +49,14 @@ h5 {
       <div class="card-body">
         <center><h5 class="card-title"><b>Tell us a little about yourself to help us find a match.</b></h5></center>
         <hr>
-        <form name="survey" method="POST">
+        <form action="http://localhost:3000/api/friends" method="POST" name="survey">
           <div class="form-group">
             <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name" required>
+            <input type="text" class="form-control" id="name" name="name" required>
           </div>
           <div class="form-group">
             <label for="photo">Photo URL:</label>
-            <input type="text" class="form-control" id="photo" required>
+            <input type="text" class="form-control" id="photo" name="photo" required>
           </div>
 
           <hr>
@@ -68,8 +65,8 @@ h5 {
           <div class="dropdown-menus"></div>
             <h5>Question 1</h5>
             <p>You've been known to talk a lot?</p>
-            <select id= "q1">
-              <option value="-1">Select an option</option>
+            <select id= "q1" name="q1" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -79,8 +76,8 @@ h5 {
             <br>
             <h5>Question 2</h5>
             <p>You enjoy comedies more than drama films</p>
-            <select id= "q2">
-              <option value="-1">Select an option</option>
+            <select id= "q2" name="q2" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -90,8 +87,8 @@ h5 {
             <br>
             <h5>Question 3</h5>
             <p>You enjoy camping and being outdoors</p>
-            <select id= "q3">
-              <option value="-1">Select an option</option>
+            <select id= "q3" name="q3" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -101,8 +98,8 @@ h5 {
             <br>
             <h5>Question 4</h5>
             <p>You would rather go to a music concert than the theatre.</p>
-            <select id= "q4">
-              <option value="-1">Select an option</option>
+            <select id= "q4" name="q4" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -112,8 +109,8 @@ h5 {
             <br>
             <h5>Question 5</h5>
             <p>You typically find your career more important than your personal life.</p>
-            <select id= "q5">
-              <option value="-1">Select an option</option>
+            <select id= "q5" name="q5" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -123,8 +120,8 @@ h5 {
             <br>  
             <h5>Question 6</h5>
             <p>You prefer dogs over cats.</p>
-            <select id= "q6">
-              <option value="-1">Select an option</option>
+            <select id= "q6" name="q6" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -134,8 +131,8 @@ h5 {
             <br>
             <h5>Question 7</h5>
             <p>You like being in the spotlight.</p>
-            <select id= "q7">
-              <option value="-1">Select an option</option>
+            <select id= "q7" name="q7" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -145,8 +142,8 @@ h5 {
             <br>
             <h5>Question 8</h5>
             <p>You enjoy sports.</p>
-            <select id= "q8">
-              <option value="-1">Select an option</option>
+            <select id= "q8" name="q8" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -156,8 +153,8 @@ h5 {
             <br>
             <h5>Question 9</h5>
             <p>Coke over Pepsi</p>
-            <select id= "q9">
-              <option value="-1">Select an option</option>
+            <select id= "q9" name="q9" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -167,8 +164,8 @@ h5 {
             <br>
             <h5>Question 10</h5>
             <p>You like to take risks.<p>
-            <select id= "q10">
-              <option value="-1">Select an option</option>
+            <select id= "q10" name="q10" required>
+              <option value="">Select an option</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -185,7 +182,7 @@ h5 {
 
   <!-- Modal -->
   
-<script>
+<!-- <script>
 
   (function () {
     // Prevent HTML5 validation
@@ -199,91 +196,57 @@ h5 {
       // Receive values for name and photo URL
       var fullName = document.forms.survey.name.value;
       var photoLink = document.forms.survey.photo.value;
-      // Empty array to store answers
-      //var answerArray =[]
       
       // validate answers and push into answerArray
       var q1Response = document.forms.survey.q1.value;
         if (q1Response < 0) {
           alert("Please select an answer for question 1")
         }
-        else {
-          //answerArray.push(q1Response);
-        }
 
       var q2Response = document.forms.survey.q2.value;
         if (q2Response < 0) {
           alert("Please select an answer for question 2")
-        }
-        else {
-          //answerArray.push(q2Response);
         }
 
       var q3Response = document.forms.survey.q3.value;
         if (q3Response < 0) {
           alert("Please select an answer for question 3")
         }
-        else {
-          //answerArray.push(q3Response);
-        }
 
       var q4Response = document.forms.survey.q4.value;
         if (q4Response < 0) {
           alert("Please select an answer for question 4")
-        }
-        else {
-          //answerArray.push(q4Response);
         }
 
       var q5Response = document.forms.survey.q5.value;
         if (q5Response < 0) {
           alert("Please select an answer for question 5")
         }
-        else {
-          //answerArray.push(q5Response);
-        }
 
       var q6Response = document.forms.survey.q6.value;
         if (q6Response < 0) {
           alert("Please select an answer for question 6")
-        }
-        else {
-          //answerArray.push(q6Response);
         }
 
       var q7Response = document.forms.survey.q7.value;
         if (q7Response < 0) {
           alert("Please select an answer for question 7")
         }
-        else {
-          //answerArray.push(q7Response);
-        }
 
       var q8Response = document.forms.survey.q8.value;
         if (q8Response < 0) {
           alert("Please select an answer for question 8")
-        }
-        else {
-          //answerArray.push(q8Response);
         }
 
       var q9Response = document.forms.survey.q9.value;
         if (q9Response < 0) {
           alert("Please select an answer for question 9")
         }
-        else {
-          //answerArray.push(q9Response);
-        }
       
       var q10Response = document.forms.survey.q10.value;
         if (q10Response < 0) {
           alert("Please select an answer for question 10")
         }
-        else {
-          //answerArray.push(q10Response);
-        }
-
-      //console.log(answerArray);
       
       // Create a new person object to store their data
       var person = new Object();
@@ -302,47 +265,21 @@ h5 {
         q10Response
       ]
       console.log(person);
+
+      // Post new person to friends page
+      $.post("/api/friends", person)
+
     });
   }());
 
-    // var selectobject = document.getElementsByClassName("dropdown-options")[0]
-    //   for (var i=0; i<selectobject.length; i++){
-    //         var selectValue = selectobject[i].value;
-    //         console.log(selectobject.options[i].text+" "+selectobject.options[i].value)
-    //         console.log(selectValue);
-    //       }
 
+</script> -->
 
-          // if (isValid === true) {
-          //   // Create a new person object to store their data
-          //   var person = new Object();
-          //   person.name = elements.name.value;
-          //   person.photo = elements.photo.value;
-          //   // person.scores = [
-          //   //   elements.question-1.value,
-          //   //   elements.question-2.value,
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
 
-          //   // ]
-          // console.log(person);
-          // }
-
-    //     // AJAX post the data to the friends API.
-    //     $.post("/api/friends", userData, function(data) {
-    //       // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-    //       $("#match-name").text(data.name);
-    //       $("#match-img").attr("src", data.photo);
-    //       // Show the modal with the best match
-    //       $("#results-modal").modal("toggle");
-    //     });
-    //   } else {
-    //     alert("Please fill out all fields before submitting!");
-    //   }
-    // });
-
-</script>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
