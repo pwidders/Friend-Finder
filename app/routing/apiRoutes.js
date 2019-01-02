@@ -2,11 +2,12 @@
 var friendData = require("../data/friends");
 
 module.exports = function(app) {
-    // API GET Requests
+    // API GET requests
     app.get("/api/friends", function(req, res) {
       res.json(friendData);
     });
 
+    // API POST requests 
     app.post("/api/friends", function (req, res) {
         // Best friend match logic
         // Variable to hold the new friend object. - Body parser allows us to use req.body
