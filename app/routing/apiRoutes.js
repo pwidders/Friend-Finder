@@ -13,7 +13,7 @@ module.exports = function(app) {
         // var newFriend = req.body;
         // console.log(newFriend);
         
-        var newFriends = friendData.slice()
+        // var newFriends = friendData.slice()
         // Create a new person object to store their data
         var person = new Object();
         person.name = req.body.name;
@@ -32,8 +32,8 @@ module.exports = function(app) {
         ]
         // testing- console.log(person);
         // Push new person into friends(newFriends) array
-        newFriends.push(person);
-        console.log('newFriends', newFriends);
+        friendData.push(person);
+        console.log('friendData', friendData);
 
 
 

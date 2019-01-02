@@ -108,7 +108,7 @@ h5 {
             </select>
             <br>
             <h5>Question 5</h5>
-            <p>You typically find your career more important than your personal life.</p>
+            <p>You prefer Winter over Summer.</p>
             <select id= "q5" name="q5" required>
               <option value="">Select an option</option>
               <option value="1">1</option>
@@ -182,98 +182,6 @@ h5 {
 
   <!-- Modal -->
   
-<!-- <script>
-
-  (function () {
-    // Prevent HTML5 validation
-    document.forms.survey.noValidate = true;
-    // Grab submit button
-    var button = document.getElementById('submit-button');
-    button.addEventListener('click', function(e) {
-      console.log("I hear you");
-      // Stop page from refreshing on submit 
-      e.preventDefault();
-      // Receive values for name and photo URL
-      var fullName = document.forms.survey.name.value;
-      var photoLink = document.forms.survey.photo.value;
-      
-      // validate answers and push into answerArray
-      var q1Response = document.forms.survey.q1.value;
-        if (q1Response < 0) {
-          alert("Please select an answer for question 1")
-        }
-
-      var q2Response = document.forms.survey.q2.value;
-        if (q2Response < 0) {
-          alert("Please select an answer for question 2")
-        }
-
-      var q3Response = document.forms.survey.q3.value;
-        if (q3Response < 0) {
-          alert("Please select an answer for question 3")
-        }
-
-      var q4Response = document.forms.survey.q4.value;
-        if (q4Response < 0) {
-          alert("Please select an answer for question 4")
-        }
-
-      var q5Response = document.forms.survey.q5.value;
-        if (q5Response < 0) {
-          alert("Please select an answer for question 5")
-        }
-
-      var q6Response = document.forms.survey.q6.value;
-        if (q6Response < 0) {
-          alert("Please select an answer for question 6")
-        }
-
-      var q7Response = document.forms.survey.q7.value;
-        if (q7Response < 0) {
-          alert("Please select an answer for question 7")
-        }
-
-      var q8Response = document.forms.survey.q8.value;
-        if (q8Response < 0) {
-          alert("Please select an answer for question 8")
-        }
-
-      var q9Response = document.forms.survey.q9.value;
-        if (q9Response < 0) {
-          alert("Please select an answer for question 9")
-        }
-      
-      var q10Response = document.forms.survey.q10.value;
-        if (q10Response < 0) {
-          alert("Please select an answer for question 10")
-        }
-      
-      // Create a new person object to store their data
-      var person = new Object();
-      person.name = fullName;
-      person.photo = photoLink;
-      person.scores = [
-        q1Response,
-        q2Response,
-        q3Response,
-        q4Response,
-        q5Response,
-        q6Response,
-        q7Response,
-        q8Response,
-        q9Response,
-        q10Response
-      ]
-      console.log(person);
-
-      // Post new person to friends page
-      $.post("/api/friends", person)
-
-    });
-  }());
-
-
-</script> -->
 
 <!--jQuery-->
 <script src="https://code.jquery.com/jquery-3.3.1.js"
