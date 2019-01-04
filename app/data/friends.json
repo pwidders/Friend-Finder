@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Dwight Schrute",
+    "photo": "https://theofficeanalytics.files.wordpress.com/2017/11/dwight.jpeg?w=1200",
+    "scores": [
+      4,
+      3,
+      4,
+      2,
+      3,
+      3,
+      1,
+      1,
+      3,
+      5
+    ]
+  },
+  {
+    "name": "Michael Scott",
+    "photo": "https://pbs.twimg.com/profile_images/563105554822737921/F-iH3BMT_400x400.png",
+    "scores": [
+      5,
+      4,
+      1,
+      1,
+      3,
+      2,
+      5,
+      1,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "Stanley Hudson",
+    "photo": "https://i.pinimg.com/originals/d2/df/2a/d2df2a431d20be6934fb8c5800cdd1a0.jpg",
+    "scores": [
+      1,
+      4,
+      1,
+      4,
+      1,
+      3,
+      1,
+      3,
+      4,
+      1
+    ]
+  },
+  {
+    "name": "Jim Halpert",
+    "photo": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F09%2Fjim-halpert-the-office-00.jpg?fit=max&cbr=1&q=90&w=1024&h=683",
+    "scores": [
+      3,
+      4,
+      4,
+      5,
+      3,
+      5,
+      1,
+      4,
+      2,
+      4
+    ]
+  },
+  {
+    "name": "Pam Beesly",
+    "photo": "https://usercontent2.hubstatic.com/13854185.jpg",
+    "scores": [
+      5,
+      1,
+      2,
+      3,
+      2,
+      3,
+      3,
+      1,
+      4,
+      2
+    ]
+  },
+  {
+    "name": "Kevin Maloney",
+    "photo": "https://gunaxin.com/wp-content/uploads/2010/08/Kevin_malone.jpg",
+    "scores": [
+      4,
+      5,
+      3,
+      5,
+      1,
+      4,
+      4,
+      1,
+      5,
+      3
+    ]
+  }
+]
